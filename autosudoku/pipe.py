@@ -18,7 +18,10 @@ class Pipe:
     
         return np.array([top_left, top_right, bottom_right, bottom_left],dtype=np.float32)
 
-    def warpSudoku(self,image):
+    def warpSudoku(self,filename):
+        #(0) we read the image
+        image = cv2.imread(filename)
+
         #(1) we grayscale the image
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 
