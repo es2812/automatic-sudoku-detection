@@ -12,10 +12,7 @@ from pipe import Pipe
 from os import walk, rename
 from os.path import join, split
 from shutil import move
-
-def show(name,image):
-    cv2.namedWindow(name,cv2.WINDOW_NORMAL)
-    cv2.imshow(name,image)
+from show import show
 
 parser = argparse.ArgumentParser()
 parser.add_argument("dir",help="Path to the directory containing images")
@@ -53,6 +50,12 @@ for filename in f:
             #the algorithm hasn't correctly warped the sudoku. we save the path
             print(filename + " is a bad sudoku")
             badly_approximated.append(filename)
+            break
+        elif k==ord('s'):
+            #we save the image
+            print(filename+' saved')
+            head,file = split(filename)
+            cv2.imwrite(join(path,"result",file),puzzle)
             break
         else:
             k = cv2.waitKey(0)
