@@ -1,2 +1,2 @@
 # automatic-sudoku-detection
-A computer vision project that aims to implement automatic detection of Sudoku puzzles via pictures
+A computer vision project that aims to implement automatic detection of Sudoku puzzles via pictures. See `Informe.pdf` for full documentation (in Spanish).
